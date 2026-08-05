@@ -1,0 +1,36 @@
+.investor { background: var(--ivy-900); color: var(--sand-100); }
+
+.investor__grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.investor__copy .eyebrow { color: var(--brass-300); }
+.investor__copy h2 { color: var(--sand-100); margin-top: 10px; }
+.investor__copy p { margin-top: 16px; color: rgba(250, 248, 243, 0.78); margin-bottom: 28px; }
+
+.investor__cases {
+  display: grid;
+  gap: 20px;
+}
+.investor__case {
+  border: 1px solid rgba(250, 248, 243, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  background: rgba(250, 248, 243, 0.04);
+}
+.investor__case h3 {
+  color: var(--brass-300);
+  font-size: 1.1rem;
+}
+.investor__case p {
+  margin-top: 10px;
+  color: rgba(250, 248, 243, 0.75);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 900px) {
+  .investor__grid { grid-template-columns: 1fr; gap: 36px; }
+}

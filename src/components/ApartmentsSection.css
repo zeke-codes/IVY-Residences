@@ -1,0 +1,16 @@
+.apartments { background: var(--sand-100); }
+
+.apartments__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.apartments__empty {
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius-lg);
+  color: var(--ink-700);
+}
+.apartments__empty p { margin-bottom: 18px; font-size: 1.05rem; }

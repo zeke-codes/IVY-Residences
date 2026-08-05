@@ -1,0 +1,194 @@
+/* =========================================================
+   THE IVY RESIDENCES — Design Tokens
+   Palette: deep ivy green dominant, brass/gold accent,
+   limestone paper background, lake-teal secondary.
+   Type: Fraunces (display serif) + Manrope (body sans)
+   + Space Mono (data/labels/utility)
+   Signature: hand-drawn vine-line dividers that "grow"
+   between sections, referencing Ivy + lakeside greenery.
+   ========================================================= */
+
+:root {
+  --ivy-950: #0f1f16;
+  --ivy-900: #16301f;
+  --ivy-800: #1f3d2b;
+  --ivy-700: #2b5038;
+  --ivy-600: #3c6b4b;
+
+  --lake-600: #3f6b63;
+  --lake-500: #557f78;
+
+  --brass-600: #a97a3d;
+  --brass-500: #c89b5c;
+  --brass-300: #e3c893;
+
+  --sand-100: #faf8f3;
+  --sand-200: #f3efe4;
+  --sand-300: #ede6d6;
+
+  --ink-900: #1c211b;
+  --ink-700: #3a4238;
+  --ink-500: #626b5e;
+
+  --line: rgba(28, 33, 27, 0.12);
+  --line-light: rgba(250, 248, 243, 0.22);
+
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
+
+  --container: 1220px;
+  --radius: 4px;
+  --radius-lg: 6px;
+
+  --shadow-soft: 0 20px 50px -20px rgba(15, 31, 22, 0.35);
+  --shadow-card: 0 10px 30px -14px rgba(15, 31, 22, 0.28);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--sand-100);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+input, select, textarea { font-family: inherit; font-size: 1rem; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ivy-900);
+  margin: 0;
+  line-height: 1.08;
+  font-weight: 500;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  color: var(--brass-600);
+  font-weight: 700;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section--tight { padding: 72px 0; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  margin-top: 10px;
+}
+
+.section-head p {
+  margin-top: 16px;
+  color: var(--ink-700);
+  font-size: 1.05rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px 30px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--brass-500);
+  color: var(--ivy-950);
+}
+.btn-primary:hover { background: var(--brass-300); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--line-light);
+  color: inherit;
+}
+.btn-outline:hover { border-color: currentColor; }
+
+.btn-dark {
+  background: var(--ivy-900);
+  color: var(--sand-100);
+}
+.btn-dark:hover { background: var(--ivy-800); }
+
+.btn-ghost {
+  background: rgba(31, 61, 43, 0.06);
+  color: var(--ivy-900);
+}
+.btn-ghost:hover { background: rgba(31, 61, 43, 0.12); }
+
+.btn-block { width: 100%; }
+.btn-sm { padding: 11px 20px; font-size: 0.82rem; }
+
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Vine divider — signature element */
+.vine-divider {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+.vine-divider svg { width: 100%; max-width: 340px; height: auto; }
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--brass-500);
+  outline-offset: 2px;
+}
+
+/* Utility grid helpers */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+@media (max-width: 900px) {
+  .section { padding: 72px 0; }
+  .container { padding: 0 20px; }
+}
